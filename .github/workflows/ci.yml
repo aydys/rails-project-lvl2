@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: make setup
       - name: Run linters
         run: |
           make linters

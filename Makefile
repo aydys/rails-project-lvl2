@@ -1,3 +1,5 @@
+setup:
+	bin/setup
 deploy:
 	git push heroku main
 
@@ -10,4 +12,6 @@ rubocop:
 linters: run_rubocop run_slim_lint
 
 tests:
-	bin/rake test
+	NODE_ENV=test bin/rails test
+
+.PHONY: test
