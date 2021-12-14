@@ -50,7 +50,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem 'minitest-power_assert', '~> 0.3.1'
+  gem 'minitest-power_assert'
+  gem 'faker'
 end
 
 group :production do
