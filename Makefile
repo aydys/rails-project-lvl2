@@ -9,7 +9,7 @@ slim_lint:
 rubocop:
 	rubocop -a
 
-linters: run_rubocop run_slim_lint
+linters: rubocop slim_lint
 
 tests:
 	NODE_ENV=test bin/rails test
