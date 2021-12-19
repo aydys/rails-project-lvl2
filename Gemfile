@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rollbar'
 gem 'rubocop-rails', require: false
+gem "slim-rails"
 gem 'slim_lint', require: false
 gem 'devise'
 
