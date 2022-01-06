@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :posts, inverse_of: 'creator'
+  has_many :posts, inverse_of: 'creator', foreign_key: 'creator_id'
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
