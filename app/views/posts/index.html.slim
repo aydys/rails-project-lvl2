@@ -1,0 +1,10 @@
+h1 Коллективный блог
+
+- @posts.each do |post|
+  .card.mb-3
+    .card-body
+      h2.h5.card-title
+        = post.title
+    .card-text.mb-2
+      = post.body 
+      
