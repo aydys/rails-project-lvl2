@@ -1,7 +1,8 @@
 setup:
 	bin/setup
+
 deploy:
-	git push heroku main
+	git push heroku main && heroku run rails db:migrate
 
 slim_lint:
 	bin/rake slim_lint
