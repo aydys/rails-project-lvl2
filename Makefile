@@ -1,6 +1,9 @@
 setup:
 	bin/setup
 
+migrate:
+	bin/rails db:migrate
+
 deploy:
 	git push heroku main && heroku run rails db:migrate
 
