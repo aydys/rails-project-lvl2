@@ -10,7 +10,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     @attrs = {
       title: Faker::Movies::HarryPotter.character,
       body: Faker::ChuckNorris.fact,
-      post_category_id: post_categories(:one)
+      post_category_id: post_categories(:one).id
     }
   end
 
