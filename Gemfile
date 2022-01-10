@@ -27,12 +27,12 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'devise'
 gem 'rollbar'
 gem 'rubocop-rails', require: false
-gem "slim-rails"
-gem 'slim_lint', require: false
-gem 'devise'
 gem 'simple_form'
+gem 'slim_lint', require: false
+gem 'slim-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

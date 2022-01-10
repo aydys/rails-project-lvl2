@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-  has_many :posts, inverse_of: 'creator', foreign_key: 'creator_id'
+  has_many :posts, inverse_of: 'creator', foreign_key: 'creator_id', dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

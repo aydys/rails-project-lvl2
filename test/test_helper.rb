@@ -15,7 +15,7 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
 
     # class ActionController::TestCase
-      include Devise::Test::IntegrationHelpers
+    include Devise::Test::IntegrationHelpers
     # end
   end
 end

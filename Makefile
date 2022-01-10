@@ -8,7 +8,7 @@ deploy:
 	git push heroku main && heroku run rails db:migrate
 
 slim_lint:
-	bin/rake slim_lint
+	bundle exec slim-lint app/views
 
 rubocop:
 	rubocop -a
