@@ -8,3 +8,5 @@ Metrics/BlockLength:
   Enabled: false
 Layout/LineLength:
   Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
