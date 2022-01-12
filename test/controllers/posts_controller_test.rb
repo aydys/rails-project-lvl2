@@ -31,4 +31,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     post posts_url, params: { post: @attrs }
     assert_redirected_to root_url
   end
+
+  test '#show' do
+    sign_in users(:one)
+    get post_url(@post)
+    assert_response :success
+  end
 end
