@@ -10,3 +10,5 @@ Layout/LineLength:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
+Rails/NotNullColumn:
+  Enabled: false

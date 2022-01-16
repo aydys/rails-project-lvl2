@@ -2,10 +2,7 @@
 
 class Posts::CommentsController < ApplicationController
   def create
-    @comment = PostComment.new do |u|
-      u.post_id = params[:post_id]
-      u.content = comment_params[:content]
-    end
+    @comment = PostComment.new(post_id: params[:post_id], user_id: current_user.id, **comment_params)
 
     if @comment.save
       redirect_to post_path(params[:post_id]), notice: 'Comment created successfully'
@@ -18,6 +15,6 @@ class Posts::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:post_comment).permit(:content)
+    params.require(:post_comment).permit(:content, :parent_id)
   end
 end

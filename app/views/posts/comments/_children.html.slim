@@ -1,0 +1,13 @@
+- children.each do |comment|
+  .d-flex
+    .mr-auto
+      span.me-1
+        = comment.user.email
+      span.text-muted
+        = comment.created_at
+      p.mr-2
+        = comment.content
+  hr.my-2
+  .ms-4
+    = render 'posts/comments/footer', comment: comment
+    = render 'posts/comments/children', children: comment.children

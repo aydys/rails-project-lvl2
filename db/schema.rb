@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_023703) do
+ActiveRecord::Schema.define(version: 2022_01_16_092231) do
 
   create_table "post_categories", force: :cascade do |t|
     t.string "name"
@@ -23,7 +23,11 @@ ActiveRecord::Schema.define(version: 2022_01_12_023703) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "post_id", null: false
+    t.string "ancestry"
+    t.integer "user_id", null: false
+    t.index ["ancestry"], name: "index_post_comments_on_ancestry"
     t.index ["post_id"], name: "index_post_comments_on_post_id"
+    t.index ["user_id"], name: "index_post_comments_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(version: 2022_01_12_023703) do
   end
 
   add_foreign_key "post_comments", "posts"
+  add_foreign_key "post_comments", "users"
   add_foreign_key "posts", "post_categories"
   add_foreign_key "posts", "users", column: "creator_id"
 end
