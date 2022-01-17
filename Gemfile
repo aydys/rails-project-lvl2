@@ -35,6 +35,7 @@ gem 'simple_form'
 gem 'slim_lint', require: false
 gem 'slim-rails'
 gem 'devise-i18n'
+gem 'rails-i18n', '~> 6.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,6 +45,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'i18n-debug'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
