@@ -4,6 +4,8 @@ ru:
     submit:
       post:
         create: Создать пост
+      post_comment:
+        create: Отправить
   simple_form:
     "yes": "ДА"
     "no": "Нет"

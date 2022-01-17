@@ -3,6 +3,8 @@ en:
     submit:
       post:
         create: Create post
+      post_comment:
+        create: Send comment
   simple_form:
     "yes": "Yes"
     "no": "No"

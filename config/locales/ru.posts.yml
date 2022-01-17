@@ -4,3 +4,8 @@ ru:
       header: Коллективный блог
     new:
       header: Новый пост
+    show:
+      comments_title: Комментарий
+    comments:
+      footer:
+        reply: Ответить

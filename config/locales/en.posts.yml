@@ -4,3 +4,8 @@ en:
       header: Collective blog
     new:
       header: New post
+    show:
+      comments_title: Comments
+    comments:
+      footer:
+        reply: Ответить

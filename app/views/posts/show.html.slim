@@ -18,7 +18,7 @@ article.col-12
       - else
         = link_to post_likes_path(post_id: @post.id, anchor: 'likes-section'), { method: :post } do
           i.bi.bi-hand-thumbs-up
-  .lead.mb-3 Koмментарий
+  .lead.mb-3 = t('.comments_title')
   = render 'posts/comments/form', parent_id: nil
 
 - unless @post.comments.empty?
