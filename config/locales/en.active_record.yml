@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      post: Post
+      post/comment: Comment
+      post/category: Category
+
+    attributes:
+      post:
+        title: Title
+        body: Content
+        post_category: Category
+      post/comment:
+        content: Content
+      post/category:
+        name: Category
