@@ -9,5 +9,5 @@ one:
 two:
   title: MyString
   body: MyText
-  creator: two
+  creator: one
   post_category: two
