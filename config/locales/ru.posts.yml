@@ -2,6 +2,7 @@ ru:
   posts:
     index:
       header: Коллективный блог
+      liked: Понравилось
     new:
       header: Новый пост
     show:

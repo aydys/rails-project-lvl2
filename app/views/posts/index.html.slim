@@ -5,5 +5,10 @@ h1 = t('.header')
     .card-body
       h2.h5.card-title
         = link_to post.title, post
-    .card-text.mb-2
-      = post.body
+      .card-text.mb-2
+        = post.body
+      .text-right.small.text-muted.mt-auto
+        span.me-2
+          = "#{t('.liked')}: #{post.likes.count}"
+        span.me-2 = time_ago_in_words post.created_at
+        span = post.creator.email

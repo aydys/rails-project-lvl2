@@ -2,6 +2,7 @@ en:
   posts:
     index:
       header: Collective blog
+      liked: Liked
     new:
       header: New post
     show:
