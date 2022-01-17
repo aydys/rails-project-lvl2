@@ -1,0 +1,6 @@
+en:
+  posts:
+    index:
+      header: Collective blog
+    new:
+      header: New post
