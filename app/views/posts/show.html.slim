@@ -1,10 +1,25 @@
-h1.mb-4.mb-lg-5
-  = @post.title
-p
-  = @post.body
-
-.lead.mb-3 Koмментарий
-= render 'posts/comments/form', parent_id: nil
+article.col-12
+  h1.mb-4.mb-lg-5
+    = @post.title
+  p
+    = @post.body
+  .d-flex.justify-content-between.mt-5
+    div id='post-section'
+      span.me-2
+        = @post.creator.email
+      span
+        = time_ago_in_words @post.created_at
+    div id='likes-section'
+      span.me-2
+        = @post.likes.count
+      - if @user_like
+        = link_to like_path(@user_like), { method: :delete } do
+          i.bi.bi-hand-thumbs-up-fill
+      - else
+        = link_to post_likes_path(post_id: @post.id, anchor: 'likes-section'), { method: :post } do
+          i.bi.bi-hand-thumbs-up
+  .lead.mb-3 Koмментарий
+  = render 'posts/comments/form', parent_id: nil
 
 - unless @post.comments.empty?
   - @post.comments.each do |comment|

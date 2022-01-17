@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
+    @user_like = @post.likes.find_by user_id: current_user.id
   end
 
   private
