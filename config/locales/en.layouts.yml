@@ -1,0 +1,9 @@
+ru:
+  layouts:
+    shared:
+      nav:
+        posts_link: Posts
+        create_post: Create post
+        sign_out: Sign out
+        sign_in: Sign in
+        sign_up: Sign up

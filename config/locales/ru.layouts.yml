@@ -1,0 +1,9 @@
+ru:
+  layouts:
+    shared:
+      nav:
+        posts_link: Посты
+        create_post: Создать пост
+        sign_out: Выйти
+        sign_in: Войти
+        sign_up: Зарегистрироваться
