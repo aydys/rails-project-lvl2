@@ -13,7 +13,7 @@ article.col-12
       span.me-2
         = @post.likes.count
       - if @user_like
-        = link_to like_path(@user_like), { method: :delete } do
+        = link_to post_like_path(@post, @user_like), { method: :delete } do
           i.bi.bi-hand-thumbs-up-fill
       - else
         = link_to post_likes_path(post_id: @post.id, anchor: 'likes-section'), { method: :post } do

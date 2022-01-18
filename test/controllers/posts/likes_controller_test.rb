@@ -16,7 +16,7 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
 
   test '#destroy' do
     sign_in users(:one)
-    delete like_url @like
+    delete post_like_url(@post, @like)
     assert_redirected_to post_url @post
   end
 end

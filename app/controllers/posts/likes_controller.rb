@@ -13,6 +13,6 @@ class Posts::LikesController < ApplicationController
   def destroy
     like = PostLike.find(params[:id])
     like.destroy
-    redirect_to post_path(like.post_id)
+    redirect_to post_path(params[:post_id])
   end
 end
