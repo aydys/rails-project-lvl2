@@ -9,4 +9,7 @@ en:
       comments_title: Comments
     comments:
       footer:
-        reply: Ответить
+        reply: Reply
+      form:
+        sign_in: sing in
+        required: Requires

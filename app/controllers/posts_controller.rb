@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     @posts = Post.all
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find params[:id]
-    @user_like = @post.likes.find_by user_id: current_user.id
+    @user_like = user_signed_in? ? @post.likes.find_by(user_id: current_user.id) : nil
   end
 
   private

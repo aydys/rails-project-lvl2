@@ -10,3 +10,6 @@ ru:
     comments:
       footer:
         reply: Ответить
+      form:
+        sign_in: войти в систему
+        require: Требуется
