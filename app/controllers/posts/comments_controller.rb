@@ -10,7 +10,7 @@ class Posts::CommentsController < ApplicationController
       redirect_to post_path(params[:post_id]), notice: 'Comment created successfully'
     else
       @post = Post.find(params[:post_id])
-      render 'posts/show', alert: 'Comment not created'
+      render 'posts/show', alert: 'Comment not created', status: :unprocessable_entity
     end
   end
 

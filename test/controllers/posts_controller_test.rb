@@ -35,4 +35,25 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     get post_url(@post)
     assert_response :success
   end
+
+  test 'should render new action when failed create action' do
+    sign_in users(:one)
+    post posts_url, params: { post: {
+      title: '',
+      body: Faker::ChuckNorris.fact,
+      post_category_id: post_categories(:one).id
+    } }
+
+    assert_response :unprocessable_entity
+  end
+
+  test 'should redirect to login form  if user is not logged in to create action' do
+    post posts_url, params: { post: @attrs }
+    assert_redirected_to new_user_session_path
+  end
+
+  test 'should redirect to login form  if user is not logged in to new action' do
+    get new_post_url
+    assert_redirected_to new_user_session_path
+  end
 end
