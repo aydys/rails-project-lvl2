@@ -13,4 +13,10 @@ class Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to post_url @post
   end
+
+  test 'should fail if user is not logged in' do
+    post post_comments_url @post, params: { post_comment: { content: 'Test' } }
+
+    assert_redirected_to new_user_session_path
+  end
 end

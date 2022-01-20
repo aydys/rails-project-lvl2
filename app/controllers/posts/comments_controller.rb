@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Posts::CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @comment = PostComment.new(post_id: params[:post_id], user_id: current_user.id, **comment_params)
 

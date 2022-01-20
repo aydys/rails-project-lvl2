@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :posts do
-    scope module: 'posts'do
+    scope module: 'posts' do
       resources :comments, except: %i[new show]
       resources :likes, only: %i[create destroy]
     end
