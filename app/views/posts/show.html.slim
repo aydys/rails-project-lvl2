@@ -23,20 +23,19 @@ article.col-12
     = render 'posts/comments/form', parent_id: nil
 
 - unless @post.comments.empty?
-  - @post.comments.each do |comment|
-    - if !comment.id.nil? && comment.is_root?
-      .card.mb-4
-        .card-header.small.mb-2.d-flex
-          .font-weight-bold
-            = comment.user.email
-        .card-body.d-flex
-          .w-100
-            .mb-3
-              = comment.content
-            - if comment.has_children?
-              .small
-                hr.my-2
-                = render 'posts/comments/children', children: comment.children
-        hr.my-2
-        .mb-2.m-4
-          = render 'posts/comments/footer', comment: comment
+  - @post.comments.roots.each do |comment|
+    .card.mb-4
+      .card-header.small.mb-2.d-flex
+        .font-weight-bold
+          = comment.user.email
+      .card-body.d-flex
+        .w-100
+          .mb-3
+            = comment.content
+          - if comment.has_children?
+            .small
+              hr.my-2
+              = render 'posts/comments/children', children: comment.children
+      hr.my-2
+      .mb-2.m-4
+        = render 'posts/comments/footer', comment: comment
