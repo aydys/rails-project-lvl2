@@ -18,4 +18,10 @@ linters: rubocop slim_lint
 tests:
 	NODE_ENV=test bin/rails test
 
+start:
+	bin/rails server
+
+seed:
+	bin/rails db:seed
+
 .PHONY: test
