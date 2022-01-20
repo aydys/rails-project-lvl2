@@ -19,4 +19,14 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
     delete post_like_url(@post, @like)
     assert_redirected_to post_url @post
   end
+
+  test 'should fail if user is not logged in to create action' do
+    post post_likes_url @post
+    assert_redirected_to new_user_session_path
+  end
+
+  test 'should fail if user is not logged in to destroy action' do
+    delete post_like_url @post, @like
+    assert_redirected_to new_user_session_path
+  end
 end
