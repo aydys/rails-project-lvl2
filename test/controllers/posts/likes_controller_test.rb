@@ -11,12 +11,14 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
   test '#create' do
     sign_in users(:one)
     post post_likes_url @post
+    PostLike.find @like.id
     assert_redirected_to post_url @post
   end
 
   test '#destroy' do
     sign_in users(:one)
     delete post_like_url(@post, @like)
+    assert { !PostLike.exists? @like.id }
     assert_redirected_to post_url @post
   end
 

@@ -10,7 +10,7 @@ class Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
   test '#create' do
     sign_in users(:one)
     post post_comments_url @post, params: { post_comment: { content: 'Test' } }
-
+    PostComment.find_by! content: 'Test'
     assert_redirected_to post_url @post
   end
 

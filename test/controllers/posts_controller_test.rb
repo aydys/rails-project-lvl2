@@ -27,6 +27,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should create post' do
     sign_in users(:one)
     post posts_url, params: { post: @attrs }
+    Post.find_by! title: @attrs[:title]
     assert_redirected_to root_url
   end
 
