@@ -27,7 +27,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should create post' do
     sign_in users(:one)
     post posts_url, params: { post: @attrs }
-    Post.find_by! title: @attrs[:title]
+    assert { Post.find_by title: @attrs[:title] }
     assert_redirected_to root_url
   end
 
@@ -46,15 +46,5 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     } }
 
     assert_response :unprocessable_entity
-  end
-
-  test 'should redirect to login form  if user is not logged in to create action' do
-    post posts_url, params: { post: @attrs }
-    assert_redirected_to new_user_session_path
-  end
-
-  test 'should redirect to login form  if user is not logged in to new action' do
-    get new_post_url
-    assert_redirected_to new_user_session_path
   end
 end

@@ -11,7 +11,7 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
   test '#create' do
     sign_in users(:one)
     post post_likes_url @post
-    PostLike.find @like.id
+    assert { PostLike.find @like.id }
     assert_redirected_to post_url @post
   end
 
@@ -20,15 +20,5 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
     delete post_like_url(@post, @like)
     assert { !PostLike.exists? @like.id }
     assert_redirected_to post_url @post
-  end
-
-  test 'should redirect to login form  if user is not logged in to create action' do
-    post post_likes_url @post
-    assert_redirected_to new_user_session_path
-  end
-
-  test 'should redirect to login form  if user is not logged in to destroy action' do
-    delete post_like_url @post, @like
-    assert_redirected_to new_user_session_path
   end
 end
