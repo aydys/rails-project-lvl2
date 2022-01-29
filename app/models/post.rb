@@ -8,4 +8,5 @@ class Post < ApplicationRecord
   has_many :likes, class_name: 'PostLike', dependent: :destroy
 
   validates :title, presence: true
+  validates :body, presence: true
 end
