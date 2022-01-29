@@ -5,7 +5,7 @@ migrate:
 	bin/rails db:migrate
 
 deploy:
-	git push heroku main && heroku run rails db:migrate
+	git push heroku main
 
 slim_lint:
 	bundle exec slim-lint app/views
