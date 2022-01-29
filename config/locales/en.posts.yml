@@ -13,3 +13,5 @@ en:
       form:
         sign_in: sing in
         required: Requires
+      comment_created: Comment created successfully
+      comment_failed: Comment not created

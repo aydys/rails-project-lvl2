@@ -13,3 +13,5 @@ ru:
       form:
         sign_in: войти в систему
         require: Требуется
+      comment_created: Комментарий
+      comment_failed: Комментарий не создан
