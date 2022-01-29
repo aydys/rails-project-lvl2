@@ -10,8 +10,10 @@ class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
 
   test '#create' do
     sign_in users(:one)
+    prev_likes_count = PostLike.all.count
     post post_likes_url @post
-    assert { PostLike.find @like.id }
+    curr_likes_count = PostLike.all.count
+    assert { curr_likes_count > prev_likes_count }
     assert_redirected_to post_url @post
   end
 
