@@ -5,7 +5,7 @@ ru:
       post:
         create: Создать пост
       post_comment:
-        create: Отправить
+        create: Cоздать Комментарий
   simple_form:
     "yes": "ДА"
     "no": "Нет"

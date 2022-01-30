@@ -10,7 +10,7 @@ ru:
         title: Название
         body: Содержание
         post_category: Категория
-      post/comment:
-        content: Содержание
-      post/category:
+      post_comment:
+        content: Комментарий
+      post_category:
         name: Категория

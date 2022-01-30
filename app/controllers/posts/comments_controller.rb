@@ -18,7 +18,7 @@ class Posts::CommentsController < ApplicationController
 
   def render_post_with_alert
     @post = Post.find(params[:post_id])
-    render 'posts/show', alert: t('.comment_failed'), status: :unprocessable_entity
+    redirect_to post_path(params[:post_id]), alert: @comment.errors.full_messages.first
   end
 
   def comment_params

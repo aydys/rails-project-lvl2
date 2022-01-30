@@ -10,7 +10,7 @@ en:
         title: Title
         body: Content
         post_category: Category
-      post/comment:
-        content: Content
-      post/category:
+      post_comment:
+        content: Comment
+      post_category:
         name: Category
