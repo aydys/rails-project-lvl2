@@ -11,7 +11,7 @@ slim_lint:
 	bundle exec slim-lint app/views
 
 rubocop:
-	rubocop -a
+	bundle exec rubocop -a
 
 linters: rubocop slim_lint
 
