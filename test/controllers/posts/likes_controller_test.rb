@@ -4,7 +4,7 @@ require 'test_helper'
 
 class Posts::LikesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @post = posts(:one)
+    @post = posts(:without_like)
     @like = post_likes(:one)
   end
 

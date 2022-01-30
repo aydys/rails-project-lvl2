@@ -11,3 +11,9 @@ two:
   body: MyText
   creator: one
   post_category: two
+
+without_like:
+  title: MyString
+  body: MyText
+  creator: one
+  post_category: two
