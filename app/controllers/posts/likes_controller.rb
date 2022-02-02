@@ -4,13 +4,12 @@ class Posts::LikesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    is_like_exists = PostLike.exists?(post_id: params[:post_id], user_id: current_user.id)
-    unless is_like_exists
+    begin
       PostLike.create(
         post_id: params[:post_id],
         user_id: current_user.id
       )
-    end
+    rescue ActiveRecord::RecordNotUnique; end   # rubocop:disable Lint/SuppressedException
     redirect_to post_path(params[:post_id])
   end
 
